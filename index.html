@@ -4,13 +4,51 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Accountra — AI-Powered Accounting</title>
+    <title>Accountra — AI-Powered Financial Statement Preparation</title>
 
+    <meta name="description" content="Accountra helps accountants turn Trial Balance data into structured financial statements with AI-assisted account classification, validation, and Excel and PDF exports.">
+
+    <link rel="canonical" href="https://accountra.online/">
     <link rel="icon" type="image/png" href="assets/favicon.png">
 
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Accountra">
+    <meta property="og:title" content="Accountra — AI-Powered Financial Statement Preparation">
+    <meta property="og:description" content="Turn Trial Balance data into structured financial statements with AI-assisted account classification, validation, and Excel and PDF exports.">
+    <meta property="og:url" content="https://accountra.online/">
+    <meta property="og:image" content="https://accountra.online/assets/favicon.png">
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Accountra — AI-Powered Financial Statement Preparation">
+    <meta name="twitter:description" content="AI-assisted Trial Balance classification, financial statement preparation, validation, and Excel/PDF exports.">
+    <meta name="twitter:image" content="https://accountra.online/assets/favicon.png">
+
+    <meta name="robots" content="index, follow, max-image-preview:large">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "Accountra",
+      "url": "https://accountra.online/",
+      "description": "AI-powered financial statement preparation and Trial Balance classification."
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "Accountra",
+      "url": "https://accountra.online/",
+      "applicationCategory": "BusinessApplication",
+      "operatingSystem": "Web",
+      "description": "AI-assisted accounting software for Trial Balance classification, financial statement preparation, validation, and Excel/PDF exports."
+    }
+    </script>
+
     <style>
-        html,
-        body {
+        html, body {
             margin: 0;
             padding: 0;
             width: 100%;
@@ -38,7 +76,8 @@
             display: block;
         }
 
-        /* Accountra clean-up layer */
+        /* Covers the Streamlit footer/fullscreen strip without
+           modifying the accounting application itself. */
         .streamlit-cover {
             position: fixed;
             left: 0;
@@ -49,21 +88,38 @@
             z-index: 999999;
             pointer-events: none;
         }
+
+        /* Crawlable fallback for browsers/crawlers that do not render
+           the embedded application. It is intentionally visible only
+           when the iframe cannot be used. */
+        .seo-fallback {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            overflow: hidden;
+            clip: rect(0 0 0 0);
+            clip-path: inset(50%);
+            white-space: nowrap;
+        }
     </style>
 </head>
 
 <body>
-
-    <div class="app-container">
+    <main class="app-container">
+        <h1 class="seo-fallback">AI-Powered Financial Statement Preparation</h1>
+        <p class="seo-fallback">
+            Accountra helps accountants turn Trial Balance data into structured
+            financial statements with AI-assisted account classification,
+            validation, and Excel and PDF exports.
+        </p>
 
         <iframe
             src="https://accountingai.streamlit.app/?embed=true"
-            title="Accountra">
+            title="Accountra AI-powered accounting application"
+            loading="eager">
         </iframe>
 
-        <div class="streamlit-cover"></div>
-
-    </div>
-
+        <div class="streamlit-cover" aria-hidden="true"></div>
+    </main>
 </body>
 </html>
