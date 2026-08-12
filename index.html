@@ -76,19 +76,6 @@
             display: block;
         }
 
-        /* Covers the Streamlit footer/fullscreen strip without
-           modifying the accounting application itself. */
-        .streamlit-cover {
-            position: fixed;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            height: 42px;
-            background: #ffffff;
-            z-index: 999999;
-            pointer-events: none;
-        }
-
         /* Crawlable fallback for browsers/crawlers that do not render
            the embedded application. It is intentionally visible only
            when the iframe cannot be used. */
@@ -119,7 +106,6 @@
             loading="eager">
         </iframe>
 
-        <div class="streamlit-cover" aria-hidden="true"></div>
     </main>
 </body>
 </html>
