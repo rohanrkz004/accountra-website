@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Trial Balance to Final Accounts Converter | Accountra</title>
+  <meta name="description" content="Convert Trial Balance Excel or CSV files into final accounts, Profit and Loss, and Balance Sheet statements with Accountra's AI-assisted accounting workflow.">
+  <link rel="canonical" href="https://accountra.online/trial-balance-to-final-accounts.html">
+  <link rel="icon" type="image/png" href="assets/favicon.png">
+  <meta name="theme-color" content="#286fc8">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Accountra">
+  <meta property="og:title" content="Trial Balance to Final Accounts Converter | Accountra">
+  <meta property="og:description" content="Prepare final accounts from Trial Balance data with AI-assisted classification, review, validation, and Excel/PDF exports.">
+  <meta property="og:url" content="https://accountra.online/trial-balance-to-final-accounts.html">
+  <meta property="og:image" content="https://accountra.online/assets/favicon.png">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Trial Balance to Final Accounts Converter | Accountra">
+  <meta name="twitter:description" content="Convert Trial Balance data into Profit and Loss and Balance Sheet statements with Accountra.">
+  <meta name="twitter:image" content="https://accountra.online/assets/favicon.png">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Accountra",
+    "url": "https://accountra.online/",
+    "applicationCategory": "BusinessApplication",
+    "operatingSystem": "Web",
+    "description": "AI-assisted Trial Balance to final accounts converter for preparing Profit and Loss and Balance Sheet statements."
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Can Accountra convert a Trial Balance into final accounts?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Yes. Accountra helps classify Trial Balance accounts and prepare Profit and Loss and Balance Sheet statements in a final accounts workflow." }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I upload an Excel or CSV Trial Balance?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Yes. Accountra supports Excel and CSV uploads and validates the debit and credit information before statement preparation." }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I review account classifications?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Yes. Accountra flags ambiguous or lower-confidence accounts so you can review them before generating final outputs." }
+      }
+    ]
+  }
+  </script>
+  <style>
+    :root { --blue:#286fc8; --blue-dark:#18549b; --cyan:#149fd1; --ink:#12243b; --muted:#5f7087; --line:#dceaf5; --bg:#f5faff; --card:#fff; }
+    * { box-sizing:border-box; }
+    body { margin:0; color:var(--ink); background:linear-gradient(180deg,#f7fbff 0%,#fff 58%); font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif; line-height:1.6; }
+    a { color:inherit; }
+    .wrap { width:min(1120px,calc(100% - 40px)); margin:0 auto; }
+    header { padding:22px 0; border-bottom:1px solid rgba(220,234,245,.8); background:rgba(255,255,255,.78); backdrop-filter:blur(12px); }
+    .nav { display:flex; align-items:center; justify-content:space-between; gap:20px; }
+    .brand { display:flex; align-items:center; gap:11px; text-decoration:none; font-weight:800; font-size:1.23rem; letter-spacing:-.03em; }
+    .brand-mark { width:34px; height:34px; border-radius:11px; display:grid; place-items:center; color:white; background:linear-gradient(135deg,var(--blue),var(--cyan)); box-shadow:0 8px 18px rgba(40,111,200,.22); font-size:.95rem; }
+    .nav-links { display:flex; align-items:center; gap:22px; color:var(--muted); font-size:.95rem; }
+    .nav-links a { text-decoration:none; }
+    .nav-links a:hover { color:var(--blue); }
+    .nav-cta, .hero-cta { display:inline-flex; align-items:center; justify-content:center; text-decoration:none; color:#fff; background:linear-gradient(135deg,var(--blue),#3d8cdb); border-radius:12px; font-weight:750; box-shadow:0 12px 26px rgba(40,111,200,.2); transition:transform .2s ease,box-shadow .2s ease; }
+    .nav-cta { padding:10px 16px; font-size:.9rem; }
+    .nav-cta:hover, .hero-cta:hover { transform:translateY(-2px); box-shadow:0 16px 30px rgba(40,111,200,.28); }
+    .hero { padding:82px 0 64px; text-align:center; }
+    .eyebrow { display:inline-flex; padding:7px 12px; border:1px solid #c8e0f2; border-radius:999px; color:var(--blue-dark); background:#edf7ff; font-size:.76rem; font-weight:800; letter-spacing:.11em; }
+    h1 { max-width:820px; margin:22px auto 18px; font-size:clamp(2.35rem,6vw,4.65rem); line-height:1.04; letter-spacing:-.065em; }
+    .hero p { max-width:720px; margin:0 auto; color:var(--muted); font-size:1.18rem; }
+    .hero-cta { margin-top:30px; padding:14px 22px; }
+    .trust { margin-top:18px; color:#71839a; font-size:.88rem; }
+    section { padding:38px 0; }
+    .section-head { max-width:700px; margin-bottom:22px; }
+    h2 { margin:0 0 8px; font-size:clamp(1.65rem,3vw,2.25rem); line-height:1.15; letter-spacing:-.04em; }
+    h3 { margin:0 0 7px; font-size:1.08rem; }
+    .section-head p, .copy p { color:var(--muted); margin:0; }
+    .grid { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; }
+    .card { padding:24px; border:1px solid var(--line); border-radius:18px; background:rgba(255,255,255,.92); box-shadow:0 12px 32px rgba(27,77,122,.06); }
+    .icon { width:38px; height:38px; display:grid; place-items:center; margin-bottom:15px; border-radius:12px; color:var(--blue-dark); background:#eaf5ff; font-weight:800; }
+    .card p { margin:0; color:var(--muted); font-size:.96rem; }
+    .process { display:grid; grid-template-columns:1.05fr .95fr; gap:34px; align-items:start; }
+    .steps { display:grid; gap:12px; }
+    .step { display:flex; gap:14px; padding:15px 0; border-bottom:1px solid var(--line); }
+    .step:last-child { border-bottom:0; }
+    .step-num { flex:0 0 30px; height:30px; display:grid; place-items:center; border-radius:50%; color:#fff; background:linear-gradient(135deg,var(--blue),var(--cyan)); font-weight:800; font-size:.86rem; }
+    .step strong { display:block; margin-bottom:2px; }
+    .step span { color:var(--muted); font-size:.94rem; }
+    .callout { padding:28px; border-radius:22px; background:linear-gradient(145deg,#eaf6ff,#f6fcff); border:1px solid #cfe5f5; }
+    .callout p { color:var(--muted); }
+    .faq { max-width:820px; }
+    details { padding:17px 0; border-bottom:1px solid var(--line); }
+    summary { cursor:pointer; font-weight:750; }
+    details p { color:var(--muted); margin:10px 0 0; }
+    .bottom-cta { margin:38px 0 56px; padding:42px 28px; text-align:center; border-radius:24px; color:#fff; background:linear-gradient(135deg,#18549b,#2d8dd0); }
+    .bottom-cta p { margin:8px auto 20px; max-width:590px; color:#e7f4ff; }
+    .bottom-cta .hero-cta { color:var(--blue-dark); background:#fff; box-shadow:none; }
+    footer { padding:24px 0 34px; color:#77889d; border-top:1px solid var(--line); font-size:.9rem; }
+    footer .footer-inner { display:flex; justify-content:space-between; gap:20px; }
+    footer a { color:var(--blue-dark); text-decoration:none; }
+    @media (max-width:760px) { .wrap { width:min(100% - 28px,560px); } .nav-links { gap:12px; font-size:.84rem; } .nav-cta { padding:9px 11px; } .hero { padding:58px 0 44px; } .hero p { font-size:1.05rem; } .grid,.process { grid-template-columns:1fr; } .process { gap:16px; } footer .footer-inner { display:block; } footer .footer-inner div + div { margin-top:6px; } }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrap nav">
+      <a class="brand" href="/"><span class="brand-mark">A</span><span>accountra <span style="color:var(--blue)">AI</span></span></a>
+      <nav class="nav-links" aria-label="Main navigation">
+        <a href="#features">Features</a>
+        <a href="#faq">FAQ</a>
+        <a class="nav-cta" href="https://accountingai.streamlit.app/">Try Accountra <span aria-hidden="true">&nbsp;→</span></a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="wrap">
+        <div class="eyebrow">AI-ASSISTED ACCOUNTING WORKFLOW</div>
+        <h1>Trial Balance to Final Accounts Converter</h1>
+        <p>Turn your Trial Balance Excel or CSV into review-ready final accounts, including Profit and Loss and Balance Sheet statements.</p>
+        <a class="hero-cta" href="https://accountingai.streamlit.app/">Convert a Trial Balance <span aria-hidden="true">&nbsp;→</span></a>
+        <div class="trust">Upload your data, review classifications, and export your working results.</div>
+      </div>
+    </section>
+
+    <section id="features">
+      <div class="wrap">
+        <div class="section-head">
+          <h2>A clearer route from Trial Balance to final accounts</h2>
+          <p>Accountra brings validation, account classification, review, and statement preparation into one focused workflow.</p>
+        </div>
+        <div class="grid">
+          <article class="card"><div class="icon">01</div><h3>Upload Excel or CSV</h3><p>Start with the Trial Balance file you already have, then check that the debit and credit totals are ready for preparation.</p></article>
+          <article class="card"><div class="icon">02</div><h3>AI-assisted classification</h3><p>Accounts are mapped toward relevant financial statement heads, with context-aware review flags for uncertain items.</p></article>
+          <article class="card"><div class="icon">03</div><h3>Prepare and export</h3><p>Generate Profit and Loss and Balance Sheet views, then use Excel and PDF outputs for your review workflow.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap process">
+        <div class="copy">
+          <h2>Built for the work between the numbers</h2>
+          <p>A Trial Balance to final accounts converter is most useful when it helps you spot what needs attention. Accountra keeps the accounting workflow reviewable, so you can verify classifications before relying on the final output.</p>
+          <div class="steps">
+            <div class="step"><div class="step-num">1</div><div><strong>Validate the source</strong><span>Check the uploaded Trial Balance and balance totals.</span></div></div>
+            <div class="step"><div class="step-num">2</div><div><strong>Review the mapping</strong><span>Focus manual review on accounts that need judgment.</span></div></div>
+            <div class="step"><div class="step-num">3</div><div><strong>Generate statements</strong><span>Move from classified accounts to final statement views.</span></div></div>
+          </div>
+        </div>
+        <aside class="callout"><h3>Designed for accountants and finance teams</h3><p>Use Accountra as an AI-assisted preparation workspace—not a replacement for professional review. Review the generated classifications and statements before statutory or client use.</p><a class="hero-cta" href="https://accountra.online/">Open the workspace <span aria-hidden="true">&nbsp;→</span></a></aside>
+      </div>
+    </section>
+
+    <section id="faq">
+      <div class="wrap faq">
+        <div class="section-head"><h2>Frequently asked questions</h2><p>Quick answers about using Accountra to prepare final accounts from Trial Balance data.</p></div>
+        <details><summary>Can Accountra convert a Trial Balance into final accounts?</summary><p>Yes. Accountra helps classify Trial Balance accounts and prepare Profit and Loss and Balance Sheet statements in a final accounts workflow.</p></details>
+        <details><summary>Can I upload an Excel or CSV Trial Balance?</summary><p>Yes. Accountra supports Excel and CSV uploads and validates debit and credit information before statement preparation.</p></details>
+        <details><summary>Can I review account classifications?</summary><p>Yes. Ambiguous or lower-confidence accounts can be surfaced for review before you generate final outputs.</p></details>
+        <details><summary>Does Accountra replace professional accounting review?</summary><p>No. It is an AI-assisted preparation workflow. Always review classifications and statements before professional, statutory, or client use.</p></details>
+      </div>
+    </section>
+
+    <div class="wrap bottom-cta"><h2>Ready to turn a Trial Balance into final accounts?</h2><p>Open Accountra and start with the data you already use.</p><a class="hero-cta" href="https://accountingai.streamlit.app/">Start with a Trial Balance <span aria-hidden="true">&nbsp;→</span></a></div>
+  </main>
+
+  <footer><div class="wrap footer-inner"><div>© 2026 Accountra</div><div><a href="/">Open Accountra</a> · Built by Rohan A</div></div></footer>
+</body>
+</html>
